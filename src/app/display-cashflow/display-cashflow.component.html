@@ -1,0 +1,24 @@
+<h2>Registro de Transacciones</h2>
+<h3>Ingresos</h3>
+<div *ngFor="let income of incomes">
+  <app-list-element
+    [title]="income.title"
+    [type]="'income'"
+    [description]="income.description"
+    [amount]="income.amount"
+    [date]="income.date"
+    [category]="income.category">
+  </app-list-element>
+</div>
+
+<h3>Gastos</h3>
+<div *ngFor="let outcome of outcomes">
+  <app-list-element
+    [title]="outcome.title"
+    [type]="'outcome'"
+    [description]="outcome.description"
+    [amount]="outcome.amount"
+    [date]="outcome.date"
+    [category]="outcome.category">
+  </app-list-element>
+</div>
