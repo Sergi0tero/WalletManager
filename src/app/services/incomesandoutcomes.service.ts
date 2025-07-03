@@ -68,6 +68,16 @@ export class IncomesandoutcomesService {
   deleteOutcome(id: number) {
     this.outcomes.splice(id, 1);
   }
+  
+  deleteCashFlow(id: number, type: 'income' | 'outcome') {
+    if (type === 'income') {
+      this.deleteIncome(id);
+      this.incomeChanged.next(this.incomes.slice());
+    } else {
+      this.deleteOutcome(id);
+      this.outcomeChanged.next(this.outcomes.slice());
+    }
+  }
 
   getTotalIncomes() {
     return this.incomes.reduce((total, income) => total + income.amount, 0);

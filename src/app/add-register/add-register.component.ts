@@ -24,13 +24,14 @@ export class AddRegisterComponent {
   constructor(private incomesandoutcomesService: IncomesandoutcomesService) {}
 
   addRegister() {
-    this.incomesandoutcomesService.addCashFlow( new CashFlow( this.title, this.category, this.type, this.description, this.amount, this.date));
+    this.incomesandoutcomesService.addCashFlow( new CashFlow(this.title, this.category, this.type, this.description, this.amount, this.date));
     
     // Reset form fields after adding the register
     this.title = '';
     this.type = 'income';
     this.description = '';
     this.amount = 0;
+    this.category = '';
     this.date = new Date();
     console.log('actual incomes:', this.incomesandoutcomesService.getIncomes());
   }

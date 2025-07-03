@@ -1,7 +1,8 @@
 <h2>Registro de Transacciones</h2>
 <h3>Ingresos</h3>
-<div *ngFor="let income of incomes">
+<div *ngFor="let income of incomes; let id = index">
   <app-list-element
+    [id]="id"
     [title]="income.title"
     [type]="'income'"
     [description]="income.description"
@@ -12,8 +13,9 @@
 </div>
 
 <h3>Gastos</h3>
-<div *ngFor="let outcome of outcomes">
+<div *ngFor="let outcome of outcomes; let id = index">
   <app-list-element
+    [id]="id"
     [title]="outcome.title"
     [type]="'outcome'"
     [description]="outcome.description"
